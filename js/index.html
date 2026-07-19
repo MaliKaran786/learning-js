@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading">Hello this code is of earlier</h1>
+    <button id="mybut">Stop</button>
+    <script>
+        function changeText(){
+            document.querySelector('#heading').innerHTML="This is new text after setTimeout call";
+        }
+        const timefunc=setTimeout(changeText, 2000);
+        document.querySelector('#mybut').addEventListener('click',()=>{
+            clearInterval(timefunc);
+            console.log("Stopped!")
+        })
+    </script>
+</body>
+</html>
