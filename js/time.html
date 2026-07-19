@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading">Initial Text</h1>
+    <button id="mybut">Stop</button>
+    <button id="mybut1">Start</button>
+    <script>
+         function changeText1(){
+            console.log("Interval is running...");
+            document.querySelector('#heading').innerHTML="This is old text before setTimeout call";
+        }
+        function changeText(){
+            console.log("Interval stopped");
+            document.querySelector('#heading').innerHTML="This is new text after setTimeout call";
+        }
+        let interval;
+        document.querySelector('#mybut1').addEventListener('click',()=>{
+            interval=setInterval(changeText1,1000);
+        });
+        document.querySelector('#mybut').addEventListener('click',()=>{
+            changeText()
+            clearInterval(interval)
+        })
+    </script>
+</body>
+</html>
